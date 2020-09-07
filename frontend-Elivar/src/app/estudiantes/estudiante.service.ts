@@ -14,8 +14,26 @@ export class EstudianteService {
 
   //se crea la funcion para que retorne un objeto ede estudiantes
   //Obtener estudiantes
-  get():Observable<Estudiante>{
-    return this.http.get<Estudiante>(this.url);
+  getAll():Observable<Estudiante[]>{
+    return this.http.get<Estudiante[]>(this.url);
   }
+
+  //Crear estudiante
+  create(estudiante:Estudiante):Observable<Estudiante>{
+    return this.http.post<Estudiante>(this.url, estudiante)
+  }
+
+  get(id:number):Observable<Estudiante>{
+    return this.http.get<Estudiante>(this.url + '/' + id);
+  }
+
+  update(estudiante:Estudiante):Observable<Estudiante>{
+      return this.http.put<Estudiante>(this.url, estudiante)
+  }
+
+  delete(id:number):Observable<Estudiante>{
+    return this.http.delete<Estudiante>(this.url + '/' + id);
+  }
+
   
 }
