@@ -23,17 +23,19 @@ export class EstudianteService {
     return this.http.post<Estudiante>(this.url, estudiante)
   }
 
+  //Obterner por ID
   get(id:number):Observable<Estudiante>{
     return this.http.get<Estudiante>(this.url + '/' + id);
   }
 
+  //Actualizar
   update(estudiante:Estudiante):Observable<Estudiante>{
       return this.http.put<Estudiante>(this.url, estudiante)
   }
 
+  //Eliminar
   delete(id:number):Observable<Estudiante>{
     return this.http.delete<Estudiante>(this.url + '/' + id);
   }
-
   
 }

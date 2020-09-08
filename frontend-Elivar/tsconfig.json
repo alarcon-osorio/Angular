@@ -14,11 +14,25 @@
       "path": "./tsconfig.spec.json"
     },
     {
-        "compilerOptions": {
-          "experimentalDecorators": true,
+      "compilerOptions": {
           "target": "es5",
-          "allowJs": true
+          "module":"commonjs",
+          "moduleResolution": "node",
+          "sourceMap": true,
+          "emitDecoratorMetadata": true,
+          "experimentalDecorators": true,
+          "removeComments": true,
+          "noImplicitAny": true,
+          "suppressImplicitAnyIndexErrors": true,
+          "allowSyntheticDefaultImports": true,
+          "types": [
+            "webpack-env"
+          ]
+      },
+      "exclude": [
+          "node_modules",
+          "app-dist"
+      ]
       }
-    }
 ]
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Estudiante } from './estudiante';
+import { EstudianteService } from './estudiante.service';
 
 @Component({
   selector: 'app-estudiantes',
@@ -6,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estudiantes.component.css']
 })
 export class EstudiantesComponent implements OnInit {
-  titulo:string = "Componente estudiantes - Lista de Estudiantes";
+  
+  estudiantes:Estudiante[];
 
-  constructor() { }
+  constructor(private estudianteService:EstudianteService) { }
 
   ngOnInit(): void {
+    this.estudianteService.getAll().subscribe(
+      result => this.estudiantes=result
+    );
   }
 
 }
