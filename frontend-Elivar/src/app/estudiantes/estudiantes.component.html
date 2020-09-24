@@ -1,20 +1,26 @@
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-        <th scope="col">Documento</th>
-        <th scope="col">Nombres</th>
-        <th scope="col">Apellidos</th>
-        <th scope="col">Email</th>
-        <th scope="col">Nota</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let estudiante of estudiantes">
-            <th scope="row">{{estudiante.documento}}</th>
-            <td>{{estudiante.nombres}}</td>
-            <td>{{estudiante.apellidos}}</td>
-            <td>{{estudiante.email}}</td>
-            <td>{{estudiante.nota}}</td>
-        </tr>        
-    </tbody>
-</table>
+<div>
+    <button class="btn btn-success" type="button" [routerLink]="['/estudiantes/form']">Agregar</button>
+</div>
+<br>
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" style="text-align: center;">Documento</th>
+            <th scope="col" style="text-align: center;">Nombres</th>
+            <th scope="col" style="text-align: center;">Apellidos</th>
+            <th scope="col" style="text-align: center;">Email</th>
+            <th scope="col" style="text-align: center;">Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let estudiante of estudiantes">
+                <th scope="row">{{estudiante.documento}}</th>
+                <td>{{estudiante.nombres}}</td>
+                <td>{{estudiante.apellidos}}</td>
+                <td>{{estudiante.email}}</td>
+                <td>{{estudiante.nota}}</td>
+            </tr>        
+        </tbody>
+    </table>
+</div>
